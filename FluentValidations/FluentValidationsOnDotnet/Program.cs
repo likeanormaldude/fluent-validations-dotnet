@@ -1,10 +1,14 @@
 using FluentValidation;
 using FluentValidationsOnDotnet;
+using FluentValidationsOnDotnet.Validators;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//builder.Services.AddScoped<IValidator<Customer>, CustomerValidator>();
 builder.Services.AddValidatorsFromAssemblyContaining(typeof(WeatherForecast));
+
+builder.Services.AddMediatR(cfg =>
+    cfg.RegisterServicesFromAssembly(typeof(CustomerValidator).Assembly)
+);
 
 // Add services to the container.
 

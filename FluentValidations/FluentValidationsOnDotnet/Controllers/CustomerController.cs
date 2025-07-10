@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 using FluentValidationsOnDotnet.Extensions;
-using FluentValidationsOnDotnet.Model;
+using FluentValidationsOnDotnet.Model.Customer;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FluentValidationsOnDotnet.Controllers;
@@ -18,8 +18,6 @@ public class CustomerController(IValidator<Customer> validator) : ControllerBase
 
         if (!result.IsValid)
             return BadRequest(result.Errors.ToGroupedValidationErrors());
-
-        // Save logic here...
 
         return Ok(customer);
     }

@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using FluentValidationsOnDotnet.Model;
+using FluentValidationsOnDotnet.Model.Customer;
 
 namespace FluentValidationsOnDotnet.Validators;
 
